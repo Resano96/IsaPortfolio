@@ -250,7 +250,7 @@ img {
   color: var(--color-border-art);
 }
 
-.paint {
+.paint, .installation {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -266,9 +266,9 @@ img {
 }
 
 .arts img {
-  padding: var(--space-elementos);
-  height: 500px;
-  object-fit: cover;
-  display: block;
+  width: 100%;
+  height: 500px;       /* mismo alto */
+  object-fit: cover;   /* recorta lo que sobra para que encaje */
   border-radius: var(--img-radius);
+  display: block;
 }
