@@ -86,7 +86,6 @@ nav .navigator {
   padding-bottom: calc(2 * var(--space-elementos));
   display: flex;
   flex-direction: column;
-
 }
 nav a {
   padding: var(--space-elementos) 0;
@@ -155,6 +154,38 @@ img {
   display: block;
 }
 
+.green {
+  background-color: var(--color-background-ocupation);
+  color: var(--color-border-ocupation);
+  border: 1px solid var(--color-border-ocupation);
+}
+.grey {
+  background-color: rgba(128, 128, 128, 0.1);
+  border: 1px solid grey;
+  color: grey;
+}
+
+.orange {
+  background-color: var(--color-background-about-me);
+  border: 1px solid var(--color-border-about-me);
+  color: var(--color-border-about-me);
+}
+.blue {
+  background-color: var(--color-background-art);
+  border: 1px solid var(--color-border-art);
+  color: var(--color-border-art);
+}
+.purple {
+  background-color: var(--color-background-CV);
+  border: 1px solid var(--color-border-CV);
+  color: var(--color-border-CV);
+}
+.red {
+  background-color: rgba(255, 0, 0, 0.1);
+  border: 1px solid red;
+  color: red;
+}
+
 /*SEPARATOR */
 .separator {
   display: flex;
@@ -187,19 +218,12 @@ img {
   font-weight: bold;
 }
 
-#ocupation {
-  background-color: var(--color-background-ocupation);
-  color: var(--color-border-ocupation);
-  border: 1px solid var(--color-border-ocupation);
-}
-
 .explication {
   margin: calc(2 * var(--space-elementos)) 0;
   font-size: var(--fontsize-explication);
   font-family: var(--fontfamily-explication);
-  color: var(--color-primary);
 }
-.project img {
+.img_project {
   margin: 1rem 0;
   width: var(--img-width);
   height: auto;
@@ -226,11 +250,6 @@ img {
   display: flex;
   gap: 10px;
 }
-#about-me {
-  background-color: var(--color-background-about-me);
-  border: 1px solid var(--color-border-about-me);
-  color: var(--color-border-about-me);
-}
 
 .astronauta {
   position: fixed;
@@ -245,11 +264,6 @@ img {
 }
 
 /*ART*/
-#art-img {
-  background-color: var(--color-background-art);
-  border: 1px solid var(--color-border-art);
-  color: var(--color-border-art);
-}
 
 .paint,
 .installation {
@@ -276,11 +290,6 @@ img {
 }
 /*CV*/
 
-#DownCV {
-  background-color: var(--color-background-CV);
-  border: 1px solid var(--color-border-CV);
-  color: var(--color-border-CV);
-}
 .contCV {
   display: flex;
   gap: calc(var(--space-elementos) * 4);
@@ -288,23 +297,57 @@ img {
 .col1 {
   width: 37%;
 }
-#CV1{
-  background-color:rgba(128, 128, 128, 0.1);
-  border: 1px solid grey;
-  color: grey;
-}
+
 .CV-title {
   font-size: var(--fontsize-title3);
   font-weight: 500;
 }
-.CV-text{
+.CV-text {
   padding: 10px 0;
 }
-.list li{
+.list li {
   margin-left: 20px;
 }
-#exp{
-  background-color:rgba(255, 0, 0, 0.1);
-  border: 1px solid red;
-  color: red;
+/*Project 1*/
+.ndzone {
+  display: flex;
+  align-items: center;
+}
+.Refonte {
+  flex: 1;
+  align-items: center;
+  align-content: flex-end;
+}
+
+.Project1-img-container {
+  flex: 2;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+  overflow: hidden;
+}
+.Project1-img-container img,
+.Project1-img-container video {
+  margin: 0 6rem;
+  width: 50%;
+  height: auto;
+  display: block;
+}
+.Project1-img-container video {
+  position: absolute;
+  top: 10;
+  left: 10;
+  width: 45%;
+  height: 95%;
+  object-fit: fill;
+}
+/*Project 2*/
+
+.problem {
+  display: grid;
+}
+.problem p{
+  width: fit-content;
 }
