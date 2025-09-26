@@ -17,6 +17,9 @@
   --color-border-about-me: rgb(207, 122, 11);
   --color-background-about-me: rgba(207, 122, 11, 0.1);
 
+  --color-border-CV: rgb(87, 61, 233);
+  --color-background-CV: rgba(87, 61, 233, 0.1);
+
   /*TAMAÑOS Y TIPOS DE LETRA*/
   --font-family-4all: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
@@ -43,9 +46,9 @@
   --fontfamily-explication: var(--font-family-4all);
 
   /*ESPACIADOS*/
-  --margen-total: 1.5rem 10rem;
+  --margen-total: 1.5rem 6rem;
   --space-navegador-contenido: 15%;
-  --space-content:80%;
+  --space-content: 80%;
   --space-elementos: 1.5rem;
 
   --radius: 20px;
@@ -83,9 +86,10 @@ nav .navigator {
   padding-bottom: calc(2 * var(--space-elementos));
   display: flex;
   flex-direction: column;
-  gap: var(--space-elementos);
+
 }
 nav a {
+  padding: var(--space-elementos) 0;
   color: var(--color-text);
   font-family: var(--fontfamily-nav);
   font-size: var(--fontsize-nav);
@@ -119,7 +123,6 @@ img {
   padding: var(--space-elementos) 0;
   font-size: var(--fontsize-title2);
   font-weight: 600;
-
 }
 
 .text {
@@ -142,7 +145,7 @@ img {
 .video-container iframe {
   width: 100%;
   height: 100%;
-  object-fit: cover; 
+  object-fit: cover;
   display: block;
   border-radius: var(--img-radius);
 }
@@ -151,8 +154,6 @@ img {
   height: auto;
   display: block;
 }
-
-
 
 /*SEPARATOR */
 .separator {
@@ -250,7 +251,8 @@ img {
   color: var(--color-border-art);
 }
 
-.paint, .installation {
+.paint,
+.installation {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -267,8 +269,39 @@ img {
 
 .arts img {
   width: 100%;
-  height: 500px;       /* mismo alto */
-  object-fit: cover;   /* recorta lo que sobra para que encaje */
+  height: 500px;
+  object-fit: cover;
   border-radius: var(--img-radius);
   display: block;
+}
+/*CV*/
+
+#DownCV {
+  background-color: var(--color-background-CV);
+  border: 1px solid var(--color-border-CV);
+  color: var(--color-border-CV);
+}
+.contCV {
+  display: flex;
+  gap: calc(var(--space-elementos) * 4);
+}
+.col1 {
+  width: 48%;
+}
+#CV1{
+  background-color:rgba(128, 128, 128, 0.1);
+  border: 1px solid grey;
+  color: grey;
+}
+.CV-title {
+  font-size: var(--fontsize-title3);
+  font-weight: 500;
+}
+.CV-text{
+  padding: 10px;
+}
+#exp{
+  background-color:rgba(255, 0, 0, 0.1);
+  border: 1px solid red;
+  color: red;
 }
