@@ -346,8 +346,37 @@ img {
 /*Project 2*/
 
 .problem {
+  padding: var(--space-elementos);
+  display: grid;
+  width: 100%;
+  border-radius: 10px;
+}
+.problem h1 {
+  width: max-content;
+  background-color: transparent;
+  color: var(--color-text);
+}
+.problem p {
+  white-space: normal;
+  color: var(--color-text);
+}
+.resultats {
   display: grid;
 }
-.problem p{
-  width: fit-content;
+.result {
+  display: flex;
+  gap: var(--space-elementos);
+}
+#app{
+  display: grid;
+}
+.solutions-processus{
+  display: flex;
+}
+.solution{
+  flex: 1;
+  display: flex;
+}
+.solcolumn{
+  flex: 1;
 }
