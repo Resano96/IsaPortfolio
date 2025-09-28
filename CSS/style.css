@@ -118,10 +118,17 @@ img {
   background-color: transparent;
 }
 
+.title {
+  font-size: var(--fontsize-title);
+  font-weight: 400;
+  text-transform: uppercase;
+  width: max-content;
+}
 .subtitle {
   padding: var(--space-elementos) 0;
   font-size: var(--fontsize-title2);
-  font-weight: 600;
+  font-weight: 400;
+  text-transform: uppercase;
 }
 
 .text {
@@ -129,7 +136,7 @@ img {
   font-family: var(--fontfamily-text);
   color: var(--color-text);
   margin: var(--space-elementos) 0;
-  line-height: 1.5;
+  line-height: 1.8rem;
 }
 
 .blood {
@@ -300,7 +307,7 @@ img {
 
 .CV-title {
   font-size: var(--fontsize-title3);
-  font-weight: 500;
+  font-weight: 600;
 }
 .CV-text {
   padding: 10px 0;
@@ -344,12 +351,28 @@ img {
   object-fit: fill;
 }
 /*Project 2*/
+.Title-Project1 {
+  color: #0d3321;
+  font-family: var(--fontfamily-title);
+  font-size: 1.875rem;
+  font-style: normal;
+  font-weight: 600;
+}
 
+.Title-Project2 {
+  color: var(#000);
+  font-family: var(--fontfamily-title);
+  font-size: 1.875rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 2.1875rem; /* 116.667% */
+}
 .problem {
   padding: var(--space-elementos);
   display: grid;
   width: 100%;
   border-radius: 10px;
+  gap: 10px;
 }
 .problem h1 {
   width: max-content;
@@ -360,23 +383,93 @@ img {
   white-space: normal;
   color: var(--color-text);
 }
+
 .resultats {
   display: grid;
 }
 .result {
   display: flex;
-  gap: var(--space-elementos);
+  gap: 100px;
 }
-#app{
+#app {
   display: grid;
 }
-.solutions-processus{
+.solutions-processus {
   display: flex;
+  align-items: flex-start;
+  align-content: flex-start;
+  gap: 15rem;
+  align-self: stretch;
+  flex-wrap: wrap;
 }
-.solution{
-  flex: 1;
+.sol {
   display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  align-self: stretch;
 }
-.solcolumn{
-  flex: 1;
+.solution {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+  flex: 1 0 0;
+}
+.solcolumn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-elementos);
+  flex: 1 0 0;
+}
+.icono {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.project-ul {
+  padding: 10px;
+}
+.project-des{
+  margin: 0;
+}
+.project-sub{
+  padding: 0;
+}
+.movilcapcontainer{
+display: flex;
+justify-content: space-between;
+align-items: flex-start;
+align-content: flex-start;
+row-gap: 2rem;
+align-self: stretch;
+flex-wrap: wrap;
+}
+.movilcap{
+  width: 15.53125rem;
+height: 31.5rem;
+aspect-ratio: 248.50/504.00;
+}
+
+.maccapcontainer {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  aspect-ratio: 930 / 563.57
+}
+.mac{
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+}
+.capmac {
+  position: absolute;
+  top: 2.4%;
+  left: 10.1%;
+  width: 80.8%;
+  height: 88.6%;
+  object-fit: fill;
+  border-radius: 6px;
+  
 }
