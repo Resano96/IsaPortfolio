@@ -78,7 +78,7 @@
 nav {
   position: fixed;
   height: 100vh;
-  width: 30%;
+  width: 10%;
   gap: calc(2 * var(--space-elementos));
 }
 
@@ -428,36 +428,59 @@ img {
   align-items: center;
 }
 .project-ul {
-  padding: 10px;
+  padding:  10px;
 }
-.project-des{
+.project-li {
+  padding: 0 15px;
+}
+.project-des {
   margin: 0;
+  display: inline-block;
 }
-.project-sub{
+.phase-tag {
+  margin:  10px 0;
+font-size: var(--fontsize-minitext);
+height: fit-content;
+width: max-content;
+padding: 0 1.3rem;
+border-radius: var(--radius);
+border: 1px solid #D5D5DA;
+background:  #F5F5F5;
+}
+
+.phase p {
+  margin: 5px -10px;
+}
+
+.project-sub {
   padding: 0;
 }
-.movilcapcontainer{
-display: flex;
-justify-content: space-between;
-align-items: flex-start;
-align-content: flex-start;
-row-gap: 2rem;
-align-self: stretch;
-flex-wrap: wrap;
+
+.project-text{
+  margin-bottom: 10px;
 }
-.movilcap{
+.movilcapcontainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-content: flex-start;
+  row-gap: 2rem;
+  align-self: stretch;
+  flex-wrap: wrap;
+}
+.movilcap {
   width: 15.53125rem;
-height: 31.5rem;
-aspect-ratio: 248.50/504.00;
+  height: 31.5rem;
+  aspect-ratio: 248.5/504;
 }
 
 .maccapcontainer {
   position: relative;
   display: inline-block;
   width: 100%;
-  aspect-ratio: 930 / 563.57
+  aspect-ratio: 930 / 563.57;
 }
-.mac{
+.mac {
   width: 100%;
   height: 100%;
   display: block;
@@ -471,5 +494,40 @@ aspect-ratio: 248.50/504.00;
   height: 88.6%;
   object-fit: fill;
   border-radius: 6px;
-  
+}
+
+.capmovil {
+  position: relative;
+  width: 250px;
+  aspect-ratio: 9 / 19.5;
+}
+.movil {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: relative;
+  z-index: 2;
+  pointer-events: none;
+}
+.pant {
+  position: absolute;
+  top: 6%;
+  left: 7%;
+  width: 86%;
+  height: 88%;
+  object-fit: cover;
+  border-radius: 20px;
+  z-index: 1;
+}
+
+.example {
+  display: flex;
+  align-items: center;
+  gap: var(--space-elementos);
+}
+.example-text {
+  width: 50%;
+}
+.example img {
+  width: 100%;
 }
