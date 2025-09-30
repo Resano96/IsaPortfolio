@@ -20,3 +20,4 @@ document.addEventListener("DOMContentLoaded", () => {
 document.getElementById("miImagen").addEventListener("click", () => {
   window.location.href = "https://tusitio.com/otra-pagina.html";
 });
+
