@@ -255,11 +255,13 @@ img {
 
 .tel,
 .email {
+  margin-top: 10px;
   display: flex;
   gap: 10px;
 }
 .tel h2,
 .email h2{
+
   font-size: var(--fontsize-title3);
 }
 
