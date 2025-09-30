@@ -103,6 +103,7 @@ nav a {
   line-height: 1.5;
   font-size: var(--fontsize-title);
   font-weight: 300;
+  text-transform: uppercase;
 }
 
 .colored {
@@ -251,11 +252,15 @@ img {
   display: grid;
   gap: var(--space-elementos);
 }
+
 .tel,
 .email {
-  font-size: var(--fontsize-title3);
   display: flex;
   gap: 10px;
+}
+.tel h2,
+.email h2{
+  font-size: var(--fontsize-title3);
 }
 
 .astronauta {
