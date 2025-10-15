@@ -1,23 +1,12 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const imagenes = document.querySelectorAll("img");
-
-  imagenes.forEach(img => {
-
-    const rutaReal = img.src;
-
-    img.dataset.src = rutaReal;
-    img.src = "assets/patito.png"; 
-
-    
-    const real = new Image();
-    real.src = rutaReal;
-
-    real.onload = () => {
-      img.src = rutaReal; 
-    };
+document.querySelectorAll(".hovered-ripple").forEach((el) => {
+  el.addEventListener("mouseenter", function (e) {
+    const span = document.createElement("span");
+    const rect = this.getBoundingClientRect();
+    const size = Math.max(rect.width, rect.height);
+    span.style.width = span.style.height = `${size}px`;
+    span.style.left = `${e.clientX - rect.left - size / 2}px`;
+    span.style.top = `${e.clientY - rect.top - size / 2}px`;
+    this.appendChild(span);
+    setTimeout(() => span.remove(), 600);
   });
 });
-document.getElementById("miImagen").addEventListener("click", () => {
-  window.location.href = "https://tusitio.com/otra-pagina.html";
-});
-

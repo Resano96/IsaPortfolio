@@ -1,0 +1,401 @@
+:root {
+  --color-primary: rgb(36, 141, 10);
+  --color-text: #111;
+  --color-bg: #fdfdfd;
+  --font: system-ui, sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  color: var(--color-text);
+  background: var(--color-bg);
+  overflow-x: hidden;
+  transition: background 0.3s ease;
+}
+
+/* HEADER */
+header {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+button {
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: 50px;
+  background: var(--color-primary);
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(36, 141, 10, 0.4);
+}
+
+/* PROJECT GRID */
+main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 0 2rem 4rem;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* CARD BASE */
+.project {
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  text-align: center;
+}
+
+.project img {
+  width: 100%;
+  display: block;
+}
+
+/* -----------------------------------
+   HOVER EFFECTS
+----------------------------------- */
+
+/* 1️⃣ hovered-tilt */
+.hovered-tilt {
+  perspective: 800px;
+  overflow: hidden;
+}
+
+.hovered-tilt img {
+  width: 100%;
+  display: block;
+  transition: transform 0.2s ease;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+/* 2️⃣ hovered-reveal */
+.hovered-reveal {
+  position: relative;
+  overflow: hidden;
+}
+.hovered-reveal img {
+  width: 100%;
+  transition: transform 0.6s ease;
+}
+.hovered-reveal .hover {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  transition: left 0.6s ease;
+}
+.hovered-reveal:hover .hover {
+  left: 0;
+}
+.hovered-reveal:hover .main {
+  transform: translateX(100%);
+}
+
+/* 3️⃣ hovered-grain */
+.hovered-grain {
+  position: relative;
+  overflow: hidden;
+}
+
+.hovered-grain img {
+  width: 100%;
+  display: block;
+  transition: filter 0.4s ease;
+}
+
+.hovered-grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("https://grainy-gradients.vercel.app/noise.svg");
+  opacity: 0;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.hovered-grain:hover img {
+  filter: brightness(0.8);
+}
+
+.hovered-grain:hover::after {
+  opacity: 0.35;
+}
+
+/* 4️⃣ hovered-zoomfade */
+.hovered-zoomfade {
+  position: relative;
+  overflow: hidden;
+}
+.hovered-zoomfade img {
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
+.hovered-zoomfade:hover img {
+  transform: scale(1.08);
+  filter: brightness(0.7);
+}
+
+/* -----------------------------------
+   PAGE TRANSITIONS
+----------------------------------- */
+
+/* FADE */
+body.transition-fade {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity .6s ease, transform .6s ease;
+}
+body.transition-fade.loaded {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* OVERLAY (cortina vertical) */
+body.transition-overlay::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: var(--color-primary);
+  transform: translateY(100%);
+  transition: transform .6s ease;
+  z-index: 9999;
+}
+body.transitioning::before { transform: translateY(0); }
+
+/* ZOOM OUT */
+body.transition-zoomout {
+  opacity: 0;
+  transform: scale(1.05);
+  transition: opacity .6s ease, transform .6s ease;
+}
+body.transition-zoomout.loaded {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* SLIDE (cortina horizontal) */
+body.transition-slide::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: var(--color-primary);
+  transform: translateX(-100%);
+  transition: transform .6s ease;
+  z-index: 9999;
+}
+body.transitioning-slide::before { transform: translateX(0); }
+
+/* TEXT */
+.project p {
+  padding: 1rem;
+}
+
+/* ==============================
+   EFECTOS NAV - BASE
+============================== */
+
+nav .navigator {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.2rem; /* 🔹 Espaciado vertical mayor entre enlaces */
+  padding: 1rem 0;
+}
+
+.hovered-nav {
+  position: relative;
+  text-decoration: none;
+  color: var(--color-text);
+  font-weight: 500;
+  transition: all 0.3s ease;
+  display: inline-block;
+  padding: 0.3rem 0.5rem; /* 🔹 Da más superficie clicable */
+}
+
+
+/* ==============================
+   1️⃣ Subrayado deslizante
+============================== */
+.underline-slide::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background: var(--color-primary);
+  transition: width 0.3s ease;
+}
+.underline-slide:hover::after {
+  width: 100%;
+}
+
+/* ==============================
+   2️⃣ Border Slide (borde envolvente)
+============================== */
+.border-slide {
+  padding: 0.4rem 0.7rem;
+  border: 2px solid transparent;
+}
+.border-slide:hover {
+  border-color: var(--color-primary);
+  border-radius: 8px;
+  color: var(--color-primary);
+  background: rgba(36, 141, 10, 0.05);
+}
+
+/* ==============================
+   3️⃣ Glow (efecto neón)
+============================== */
+.glow {
+  transition: color 0.4s ease, text-shadow 0.4s ease;
+}
+.glow:hover {
+  color: var(--color-primary);
+  text-shadow: 0 0 10px rgba(36, 141, 10, 0.6),
+               0 0 20px rgba(36, 141, 10, 0.4);
+}
+
+/* ==============================
+   4️⃣ Split Color (bicolor diagonal)
+============================== */
+.split-color {
+  background: linear-gradient(
+    120deg,
+    var(--color-primary) 50%,
+    var(--color-text) 50%
+  );
+  background-size: 220% 100%;
+  background-position: 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: background-position 0.4s ease;
+}
+.split-color:hover {
+  background-position: 0 100%;
+}
+
+/* ==============================
+   5️⃣ Wave underline (subrayado ondulado)
+============================== */
+.wave {
+  position: relative;
+}
+.wave::after {
+  content: "~ ~ ~ ~ ~";
+  position: absolute;
+  bottom: -0.5rem;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: var(--color-primary);
+  opacity: 0;
+  transform: translateY(5px);
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+.wave:hover::after {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==============================
+   6️⃣ Subrayado invertido
+============================== */
+.underline-invert {
+  background-image: linear-gradient(
+    to right,
+    var(--color-primary) 0%,
+    var(--color-primary) 100%
+  );
+  background-size: 0% 2px;
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  transition: background-size 0.3s ease;
+}
+.underline-invert:hover {
+  background-size: 100% 2px;
+}
+
+/* =============== FADE =============== */
+body.transition-fade {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+body.transition-fade.loaded {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =============== ZOOMOUT =============== */
+body.transition-zoomout {
+  opacity: 0;
+  transform: scale(1.05);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+body.transition-zoomout.loaded {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* =============== OVERLAY (cortina vertical) =============== */
+body.transition-overlay::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: var(--color-primary);
+  transform: translateY(100%);
+  transition: transform 0.6s ease;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+/* cuando sale */
+body.transitioning::before {
+  transform: translateY(0);
+}
+
+/* cuando entra */
+body.transition-overlay.loaded::before {
+  transform: translateY(-100%);
+}
+
+/* =============== SLIDE (cortina horizontal) =============== */
+body.transition-slide::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: var(--color-primary);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+/* salida */
+body.transitioning-slide::before {
+  transform: translateX(0);
+}
+
+/* entrada */
+body.transition-slide.loaded::before {
+  transform: translateX(100%);
+}

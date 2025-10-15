@@ -374,6 +374,46 @@ img {
   color: transparent;
 }
 
+
+
+.hovered-ripple {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  padding: 0.6rem 1rem;
+  color: var(--color-text);
+  transition: color 0.3s ease;
+}
+
+.hovered-ripple span {
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  background: rgba(36, 141, 10, 0.3);
+  animation: ripple-animation 0.6s linear;
+  pointer-events: none;
+}
+
+@keyframes ripple-animation {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+.hovered-gradient {
+  background: linear-gradient(90deg, var(--color-primary), #00c853, #2ecc71);
+  background-size: 200%;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  transition: background-position 0.6s ease;
+}
+
+.hovered-gradient:hover {
+  background-position: 100%;
+}
+
 /*INDEX*/
 .Todo {
   margin: var(--margen-total);

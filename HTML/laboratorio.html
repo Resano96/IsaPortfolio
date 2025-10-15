@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demo de Transiciones</title>
+    <link rel="stylesheet" href="../CSS/hover-lab.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1>✨ Demo de transiciones y efectos hover</h1>
+      <button id="toggleTransition">Transición: fade</button>
+    </header>
+    <nav>
+      <div class="navigator">
+        <a href="./index.html" class="hovered-nav underline-slide"
+          >My projects</a
+        >
+        <a href="HTML/About.html" class="hovered-nav split-color">About</a>
+        <a href="HTML/Art.html" class="hovered-nav glow">Art</a>
+      </div>
+
+      <div class="navigator">
+        <a
+          href="https://www.linkedin.com/in/isabelorozservicedesigner/"
+          target="_blank"
+          class="hovered-nav wave"
+          >LinkedIn</a
+        >
+        <a href="./HTML/CV.html" class="hovered-nav border-slide">CV</a>
+      </div>
+    </nav>
+
+    <main>
+      <div class="project hovered-zoomfade">
+        <a href="page2.html" class="transition-link">
+          <img src="https://picsum.photos/id/1015/600/400" alt="Proyecto 1" />
+          <p>Hover Zoom + Transición activa</p>
+        </a>
+      </div>
+
+      <div class="project hovered-grain">
+        <a href="page2.html" class="transition-link">
+          <img src="https://picsum.photos/id/1024/600/400" alt="Proyecto 2" />
+          <p>Hover Grain</p>
+        </a>
+      </div>
+
+      <div class="project hovered-tilt">
+        <a href="page2.html" class="transition-link">
+          <img src="https://picsum.photos/id/1042/600/400" alt="Proyecto 3" />
+          <p>Hover Tilt (sigue el ratón)</p>
+        </a>
+      </div>
+
+      <div class="project hovered-reveal">
+        <a href="page2.html" class="transition-link">
+          <img src="https://picsum.photos/id/1062/600/400" class="main" />
+          <img src="https://picsum.photos/id/1069/600/400" class="hover" />
+          <p>Hover Reveal</p>
+        </a>
+      </div>
+    </main>
+
+    <script src="../JavaScript/hover-lab.js"></script>
+  </body>
+</html>
