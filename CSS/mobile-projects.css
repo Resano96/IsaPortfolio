@@ -147,39 +147,72 @@
   .cursor-ring {
     display: none;
   }
-}
-.problem {
-  width: 100%;
-}
-.title {
-  width: 100%;
-  max-width: 100%;
-  font-size: 1.5rem;
-}
-.example {
-  display: contents;
-  width: 100%;
-}
-.subtitle {
-  width: 100%;
-}
-.result {
-  display: contents;
-}
-.icon {
-  display: none;
-}
-.solutions-processus {
-  display: contents;
-  gap: 10px;
-}
-.sol {
-  gap: 0;
-}
-ul {
-  margin: 0;
-  padding: 0;
-}
-.project-li {
+
+  .problem {
+    width: 100%;
+  }
+  .title {
+    width: 100%;
+    max-width: 100%;
+    font-size: 1.5rem;
+  }
+  .example {
+    display: contents;
+    width: 100%;
+  }
+  .subtitle {
+    width: 100%;
+  }
+  .result {
+    display: contents;
+  }
+  .icon {
+    display: none;
+  }
+  .solutions-processus {
+    display: contents;
+    gap: 10px;
+  }
+  .sol {
+    gap: 0;
+  }
+  ul {
+    margin: 0;
     padding: 0;
+  }
+  .project-li {
+    padding: 0;
+  }
+  .movilcapcontainer {
+    display: flex;
+    flex-wrap: nowrap;              /* una sola fila */
+    overflow-x: auto;               /* desplazamiento horizontal */
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;  /* hace “click” al parar */
+    -webkit-overflow-scrolling: touch;
+    gap: 1rem;
+    justify-content: flex-start;
+    padding: 1rem;                  /* respiro lateral */
+    width: 100%;
+  }
+
+  .movilcap {
+    flex: 0 0 85%;                  /* ocupa la mayor parte del ancho */
+    max-width: 85%;
+    height: auto;
+    aspect-ratio: 248.5 / 504;
+    border-radius: 20px;
+    object-fit: cover;
+    scroll-snap-align: center;      /* centrado suave en el viewport */
+  }
+
+  /* Oculta la barra de scroll (opcional) */
+  .movilcapcontainer::-webkit-scrollbar {
+    height: 6px;
+  }
+  .movilcapcontainer::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 99px;
+  }
 }
+
