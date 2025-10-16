@@ -2,11 +2,8 @@
   /*PALETA BASICA*/
 
   /* COLORES*/
-  --color-background: transparent;
-  --color-primary: rgb(36, 141, 10);
+  --color-primary: rgb(52, 29, 182);
   --color-text: rgb(0, 0, 0);
-  --color-text2: rgb(60, 61, 60);
-  --color-secondary-text: rgb(171, 178, 191);
 
   --color-border-art: rgb(4, 112, 139);
   --color-background-art: rgba(4, 112, 139, 0.1);
@@ -20,9 +17,9 @@
   --color-border-CV: rgb(87, 61, 233);
   --color-background-CV: rgba(87, 61, 233, 0.1);
 
-  --color-navigator: rgb(74, 71, 213);
+  --color-navigator: var(--color-primary);
 
-  --color-cursor: rgb(74, 71, 213);
+  --color-cursor: var(--color-primary);
 
   /*TAMAÑOS Y TIPOS DE LETRA*/
   --font-family-4all: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
@@ -99,15 +96,27 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: var(--color-background);
+}
+.Todo {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-navegador-contenido);
+  margin: var(--margen-total);
+  cursor: none;
   z-index: 2;
   font-family: var(--fontfamily-text);
+}
+.mobile-header {
+  display: none;
 }
 nav {
   position: fixed;
   height: 100vh;
   width: 10%;
   gap: calc(2 * var(--space-elementos));
+}
+nav .nav-logo {
+  display: none;
 }
 
 nav .navigator {
@@ -130,13 +139,7 @@ a {
   font-weight: 600;
   border-bottom: 3px solid var(--color-navigator);
 }
-.Todo {
-  display: flex;
-  align-items: flex-start;
-  gap: var(--space-navegador-contenido);
-  margin: var(--margen-total);
-  cursor: none;
-}
+
 .all-content {
   width: var(--space-content);
 }
@@ -167,6 +170,7 @@ img {
   font-weight: 400;
   text-transform: uppercase;
   width: max-content;
+  color: var(--color-text);
 }
 .subtitle {
   padding: var(--space-elementos) 0;
@@ -446,7 +450,7 @@ img {
   background: rgba(0, 0, 0, 0.85);
   justify-content: center;
   align-items: center;
-  z-index: 9999;
+  z-index: 3;
   cursor: zoom-out;
 }
 
@@ -554,15 +558,6 @@ img {
   border-radius: 10px;
   gap: 10px;
 }
-.problem h1 {
-  width: max-content;
-  background-color: transparent;
-  color: var(--color-text);
-}
-.problem p {
-  white-space: normal;
-  color: var(--color-text);
-}
 
 .resultats {
   display: grid;
@@ -630,7 +625,6 @@ img {
   border-radius: var(--radius);
   border: 1px solid #d5d5da;
   background: #f1f1f1;
-
   white-space: normal;
   line-height: 1.2;
   word-break: break-word;
@@ -722,4 +716,112 @@ img {
 
 .harmonie_logo {
   width: 13vw;
+}
+
+/* ===============================
+   📱 ESTILOS MENÚ MÓVIL DESPLEGABLE
+   =============================== */
+
+@media (max-width: 768px) {
+  .mobile-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 64px;
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1.5rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    z-index: 4;
+  }
+  nav .nav-logo {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+}
+
+  .menu-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 26px;
+    height: 20px;
+    z-index: 5;
+  }
+
+  .menu-toggle .bar {
+    width: 100%;
+    height: 2px;
+    background: #000;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+
+  /* Cambiar a X */
+  .menu-toggle.active .bar:nth-child(1) {
+    transform: rotate(45deg) translateY(8px);
+  }
+  .menu-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .menu-toggle.active .bar:nth-child(3) {
+    transform: rotate(-45deg) translateY(-8px);
+  }
+  /* Panel lateral */
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 80%;
+    max-width: 90%;
+    background: #ffffff;
+    transform: translateX(-100%);
+    transition: transform 0.4s ease;
+    box-shadow: 8px 0 25px rgba(0, 0, 0, 0.15);
+    z-index: 5;
+    padding: 6rem 2rem;
+    gap: 1.5rem;
+    pointer-events: auto; /* <-- IMPORTANTE */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  nav.open {
+    transform: translateX(0);
+  }
+
+  /* Overlay */
+  .menu-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(2px);
+    opacity: 1;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 4;
+  }
+
+  .menu-overlay.active {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .Todo {
+    margin-top: 80px;
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
