@@ -105,6 +105,7 @@
   cursor: none;
   z-index: 2;
   font-family: var(--fontfamily-text);
+  background-color: whitesmoke;
 }
 .mobile-header {
   display: none;
