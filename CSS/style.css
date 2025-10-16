@@ -14,8 +14,8 @@
   --color-border-about-me: rgb(207, 122, 11);
   --color-background-about-me: rgba(207, 122, 11, 0.1);
 
-  --color-border-CV: rgb(87, 61, 233);
-  --color-background-CV: rgba(87, 61, 233, 0.1);
+  --color-border-CV: rgba(87, 61, 233, 0.1);
+  --color-background-CV: rgb(87, 61, 233);
 
   --color-navigator: var(--color-primary);
 
@@ -58,6 +58,8 @@
   --img-width: 100%;
   --img-height: 400px;
   --img-radius: 20px;
+  --img-width-mobile: 100%;
+  --img-height-mobile: 200px;
 }
 
 /*CURSOR*/
@@ -240,7 +242,9 @@ img {
 .purple {
   background-color: var(--color-background-CV);
   border: 1px solid var(--color-border-CV);
-  color: var(--color-border-CV);
+  color: white;
+  font-weight: 500;
+  text-decoration: none;
 }
 .red {
   background-color: rgba(255, 0, 0, 0.1);
@@ -316,6 +320,9 @@ img {
   font-size: var(--fontsize-explication);
   font-family: var(--fontfamily-explication);
 }
+#DownCVmob {
+    display: none;
+  }
 
 .img_project-container {
   position: relative;
@@ -724,6 +731,7 @@ img {
    =============================== */
 
 @media (max-width: 768px) {
+  /*Nav Mobile*/
   .mobile-header {
     position: fixed;
     top: 0;
@@ -792,7 +800,7 @@ img {
     z-index: 5;
     padding: 6rem 2rem;
     gap: 1.5rem;
-    pointer-events: auto; /* <-- IMPORTANTE */
+    pointer-events: auto;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -819,10 +827,100 @@ img {
     opacity: 1;
     pointer-events: all;
   }
-
+  /*Commun-mob*/
   .Todo {
-    margin-top: 80px;
-    margin-left: 0;
-    margin-right: 0;
+    margin: 3.6rem 0.5rem;
+    cursor: auto;
+  }
+
+  .isa {
+    display: none;
+  }
+
+  .cursor-ring {
+
+    display: none;
+  }
+
+  .text{
+    margin: 0.5rem 0;
+  }
+
+.colored{
+  margin: 1rem auto;
+}
+  /*Index-mob*/
+  .img_project-container {
+    position: relative;
+    width: var(--img-width-mobile);
+    height: var(--img-height-mobile);
+    overflow: hidden;
+    border-radius: 16px;
+    display: inline-block;
+  }
+
+  #DownCVmob {
+    display: flex;
+    position: relative;
+  }
+  /*About-mob*/
+
+  #about {
+    width: 100%;
+  }
+  .astronauta {
+
+    position: fixed;
+    top: 15%;
+    right: -35%;
+    width: 100%;
+    opacity: 0.5;
+    z-index: -10;
+    pointer-events: none;
+  }
+
+  .astronauta img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+      filter: grayscale(100%) brightness(1.2); 
+        clip-path: inset(0 0 35% 0);
+  }
+
+  /*Art-mob*/
+  .arts {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 1rem;
+    scroll-behavior: smooth;
+    padding-bottom: 1rem;
+  }
+
+  .arts::-webkit-scrollbar {
+    display: none; /* Sin scrollbar visible */
+  }
+
+  .arts .art-image {
+    flex: 0 0 80%;
+    scroll-snap-align: center;
+    border-radius: var(--img-radius);
+    object-fit: cover;
+    width: auto;
+    height: 400px;
+  }
+
+  /*CV-mob*/
+  .contCV {
+    display: block;           /* una sola columna */
+    gap: 0;                   /* elimina el espacio entre columnas */
+  }
+
+  .col1 {
+    width: 100%;              /* que ocupe todo el ancho */
+  }
+
+  .col2 {
+    width: 100%;              /* asegúrate de que la segunda columna también lo haga */
   }
 }
