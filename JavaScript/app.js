@@ -71,7 +71,7 @@ function initNav() {
     if (nav.classList.contains(claseAbierto)) {
       startX = e.touches[0].clientX;
     }
-  });
+  }, { passive: true });
 
   nav.addEventListener('touchmove', (e) => {
     if (!startX) return;
@@ -83,7 +83,7 @@ function initNav() {
       toggle(false);
       startX = 0;
     }
-  });
+  }, { passive: true });
 
   nav.addEventListener('touchend', () => {
     startX = 0;
@@ -130,3 +130,4 @@ document.querySelectorAll('.mobile-logo').forEach((logo) => {
     });
   });
 });
+
