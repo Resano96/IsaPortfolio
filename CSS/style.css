@@ -738,13 +738,13 @@ img {
     z-index: 4;
   }
   nav .nav-logo {
-  display: block;
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #000;
-  margin-bottom: 2rem;
-  text-transform: uppercase;
-}
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+  }
 
   .menu-toggle {
     background: none;
