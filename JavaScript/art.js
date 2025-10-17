@@ -22,3 +22,25 @@ artViewer.addEventListener("click", () => {
   artViewer.classList.remove("active");
   setTimeout(() => (artViewer.style.display = "none"), 300);
 });
+
+
+
+
+// Carrusel automático para el contenedor .arts
+/*
+document.querySelectorAll('.arts').forEach((container) => {
+  const slides = container.querySelectorAll('.art-image');
+  let index = 0;
+
+  function nextSlide() {
+    index = (index + 1) % slides.length; // vuelve al inicio al final
+    container.scrollTo({
+      left: slides[index].offsetLeft,
+      behavior: 'smooth'
+    });
+  }
+
+  // Avanza automáticamente cada 10 segundos
+  let timer = setInterval(nextSlide, 5000);
+});
+*/

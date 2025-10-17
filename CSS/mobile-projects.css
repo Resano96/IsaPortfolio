@@ -185,34 +185,33 @@
   }
   .movilcapcontainer {
     display: flex;
-    flex-wrap: nowrap;              /* una sola fila */
-    overflow-x: auto;               /* desplazamiento horizontal */
+    flex-wrap: nowrap; /* una sola fila */
+    overflow-x: auto; /* desplazamiento horizontal */
     overflow-y: hidden;
-    scroll-snap-type: x mandatory;  /* hace “click” al parar */
+    scroll-snap-type: x mandatory; /* hace “click” al parar */
     -webkit-overflow-scrolling: touch;
     gap: 1rem;
     justify-content: flex-start;
-    padding: 1rem;                  /* respiro lateral */
+    padding: 1rem; /* respiro lateral */
     width: 100%;
   }
 
   .movilcap {
-    flex: 0 0 85%;                  /* ocupa la mayor parte del ancho */
+    flex: 0 0 85%; /* ocupa la mayor parte del ancho */
     max-width: 85%;
     height: auto;
     aspect-ratio: 248.5 / 504;
     border-radius: 20px;
     object-fit: cover;
-    scroll-snap-align: center;      /* centrado suave en el viewport */
+    scroll-snap-align: center; /* centrado suave en el viewport */
   }
-
-  /* Oculta la barra de scroll (opcional) */
-  .movilcapcontainer::-webkit-scrollbar {
-    height: 6px;
+  .example-text {
+    width: 100%;
   }
-  .movilcapcontainer::-webkit-scrollbar-thumb {
-    background: rgba(0, 0, 0, 0.2);
-    border-radius: 99px;
+  .ndzone {
+    display: contents;
   }
+  .Project1-img-container {
+    width:auto;
 }
-
+}
