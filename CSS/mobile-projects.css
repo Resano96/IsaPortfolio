@@ -2,7 +2,7 @@
 @media (max-width: 480px) {
   .Todo {
     margin: 0;
-    padding: 64px 0 0 0;
+    padding: 64px 0 ;
     gap: inherit;
     position-anchor: content;
     justify-content: center;
@@ -214,7 +214,10 @@
   .Project1-img-container {
     width: auto;
   }
-  .video{
+  .video {
     border-radius: 20px;
+  }
+  .mac {
+    height: auto;
   }
 }
