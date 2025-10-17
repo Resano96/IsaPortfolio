@@ -212,6 +212,9 @@
     display: contents;
   }
   .Project1-img-container {
-    width:auto;
-}
+    width: auto;
+  }
+  .video{
+    border-radius: 20px;
+  }
 }
